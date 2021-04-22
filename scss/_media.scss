@@ -1,0 +1,148 @@
+@media (max-width: 1420px) {
+  .header {
+    &__menu-item {
+      margin-left: 45px;
+    }
+
+    &__drop-cont {
+      padding-left: 15px;
+      padding-right: 40px;
+      .header__menu-text {
+        &:before {
+          left: -20px;
+        }
+      }
+    }
+
+    &__menu-item-drop {
+      margin-bottom: 25px;
+      padding-left: 15px;
+    }
+
+    &__menu-btn {
+      width: 200px;
+    }
+  }
+
+  .home-slider {
+    .slick-dots {
+      right: 15px;
+      button {
+        margin-left: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .header {
+    height: 80px;
+
+    &__logo {
+      max-width: 150px;
+      position: relative;
+      z-index: 10;
+    }
+
+    &__menu {
+      position: absolute;
+      background: #202424;
+      top: -18px;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transform: translateY(-100%);
+      transition: all 0.5s;
+      &.active {
+        transform: translateY(0);
+      }
+    }
+
+    &__menu-item {
+      width: 230px;
+      margin-left: 0px;
+      margin-bottom: 46px;
+    }
+
+    &__menu-link,
+    &__menu-text {
+      display: block;
+      width: max-content;
+    }
+
+    &__drop-cont {
+      padding-right: 30px;
+      height: auto;
+      margin-left: 40px;
+    }
+
+    &__dropdown {
+      opacity: 0;
+      transition: all 0.5s;
+      position: absolute;
+      transform: translateY(-10%);
+      padding-top: 20px;
+      z-index: -1;
+      top: 30px;
+    }
+
+    &__menu-item-drop {
+      margin-bottom: 27px;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    &__menu-btn {
+      width: 234px;
+      height: 71px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__burger {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .home-slider {
+    &__slider {
+      height: 750px;
+    }
+
+    &__img {
+      height: 750px !important;
+    }
+
+    .slick-dots {
+      right: 15px;
+      bottom: 15px;
+      button {
+        margin-left: 40px;
+      }
+
+      li {
+        p {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 766px) {
+  .home-slider {
+    &__slider {
+      height: 550px;
+    }
+
+    &__img {
+      height: 550px !important;
+    }
+  }
+}
