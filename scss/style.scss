@@ -2,6 +2,7 @@
 @import "main";
 
 .header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   &.active {
     height: 100px;
     .header__drop-cont,
@@ -311,12 +312,13 @@
       position: absolute;
       content: "";
       top: 50%;
-      transform: translateY(-50%);
+      transform: translateY(-50%) scale(1.025);
       height: 450px;
       left: 0;
       right: 0;
       background: rgba(45, 45, 45, 0.8);
       transition: all 0.5s;
+      z-index: 1;
     }
     &.slick-current {
       transition: all 0.5s;
@@ -435,6 +437,7 @@
     transition: all 0.5s;
     box-sizing: border-box;
     opacity: 0;
+    z-index: 2;
     transition: all 0.5s;
     &:hover {
       background: #ddbf89;

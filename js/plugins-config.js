@@ -17,7 +17,7 @@ if (document.querySelector(".home-slider__slider")) {
 if (document.querySelector(".two-slider__slider")) {
   $(".two-slider__slider").slick({
     slidesToShow: 1,
-    infinite: false,
+    infinite: true,
     dots: false,
     cssEase: "linear",
     centerMode: true,
