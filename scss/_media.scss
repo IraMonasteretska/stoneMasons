@@ -345,13 +345,7 @@
       // margin-bottom: 46px;
     }
 
-    .slick-dots {
-      li {
-        p {
-          display: none;
-        }
-      }
-    }
+ 
   }
   .home-slider {
     &__slider {
@@ -360,6 +354,14 @@
 
     &__img {
       height: 550px !important;
+    }
+
+    .slick-dots {
+      li {
+        p {
+          display: none;
+        }
+      }
     }
   }
 

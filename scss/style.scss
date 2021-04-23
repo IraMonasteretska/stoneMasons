@@ -340,10 +340,10 @@
     height: 100%;
     transition: all 0.5s;
     object-fit: cover;
-    transition: all .5s;
+    transition: all 0.5s;
     overflow: hidden;
     transform: scale(1.025);
-    &.hoverpic{
+    &.hoverpic {
       transform: scale(1);
     }
   }
@@ -400,6 +400,12 @@
         background: #f0eee9;
       }
     }
+    &:hover {
+      color: #ddbf89;
+      &:before {
+        background: #ddbf89;
+      }
+    }
   }
 
   &__prev {
@@ -430,7 +436,7 @@
     box-sizing: border-box;
     opacity: 0;
     transition: all 0.5s;
-    &:hover{
+    &:hover {
       background: #ddbf89;
     }
   }
@@ -451,7 +457,6 @@
     letter-spacing: 0.15em;
     color: #585858;
     transition: all 0.5s;
-  
   }
 
   .slick-arrow {

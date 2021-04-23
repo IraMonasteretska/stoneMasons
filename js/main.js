@@ -12,18 +12,25 @@ if (document.querySelector(".main-black-bg")) {
   header.classList.add("main-black-bg-head");
 }
 // start hide header
-
+let firstBlockScroll;
+if (document.querySelector(".main-black-bg")) {
+  firstBlockScroll = document.querySelector(".home-slider").offsetHeight;
+  console.log(firstBlockScroll);
+} else {
+  firstBlockScroll = 600;
+}
 scrollPrev = 0;
+
 window.addEventListener("scroll", () => {
   let scrolled = document.documentElement.scrollTop;
-  if (scrolled > 600 && scrolled > scrollPrev) {
+  if (scrolled > firstBlockScroll && scrolled > scrollPrev) {
     if (window.matchMedia("(min-width: 1023px)").matches) {
       header.classList.add("active");
     }
     if (document.querySelector(".main-black-bg")) {
       header.classList.add("active-dark");
     }
-  } else if (scrolled < 600) {
+  } else if (scrolled < firstBlockScroll) {
     header.classList.remove("active");
     header.classList.remove("active-dark");
   }
