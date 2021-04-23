@@ -225,6 +225,16 @@
 
   &__dots-text {
     color: rgba(240, 238, 233, 0.6);
+    position: relative;
+    &:before {
+      position: absolute;
+      content: "";
+      bottom: -10px;
+      left: 0;
+      width: 37px;
+      height: 1px;
+      background: rgba(240, 238, 233, 0.6);
+    }
   }
 
   .slick-dots {
@@ -246,6 +256,9 @@
       p,
       span {
         color: #b7a179;
+        &:before {
+          background: #b7a179;
+        }
       }
     }
   }
@@ -586,28 +599,27 @@
   }
 }
 
-
-.about-main.about-us{
+.about-main.about-us {
   margin-top: 0;
   padding-top: 230px;
-  .about-main__text{
-&:first-child{
-  margin-right: 15px;
-}
-&:last-child{
-  margin-left: 15px;
-}
+  .about-main__text {
+    &:first-child {
+      margin-right: 15px;
+    }
+    &:last-child {
+      margin-left: 15px;
+    }
   }
-  .about-main__df{
-align-items: flex-start
+  .about-main__df {
+    align-items: flex-start;
   }
 }
 
-.two-slider.about-us{
+.two-slider.about-us {
   margin-top: 180px;
 
   .slick-slider {
-margin-top: 60px;
+    margin-top: 60px;
   }
 }
 @import "media";
