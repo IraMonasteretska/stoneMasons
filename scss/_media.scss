@@ -345,7 +345,7 @@
   .header{
     &__menu-item {
       width: 230px;
-      // margin-left: 0px;
+      margin-left: 0px;
       // margin-bottom: 46px;
     }
 
@@ -515,6 +515,7 @@
   }
 
   .about-main.about-us {
+    margin-top: 0;
     .about-main__text {
       &:first-child {
         margin-right: 0px;
@@ -527,6 +528,14 @@
 
   .two-slider.about-us{
     margin-top: 60px;
+}
+
+.two-slider.about-us .slick-slider {
+  margin-top: 0px;
+}
+
+.main.main {
+  padding-top: 80px; 
 }
 }
 

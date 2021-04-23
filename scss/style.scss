@@ -46,6 +46,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    &.active{
+      .header__dropdown{
+        background: rgba(45, 45, 45, 0.8) !important;
+      }
+
+    }
   }
 
   &__menu-item {
