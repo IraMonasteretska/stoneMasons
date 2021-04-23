@@ -335,6 +335,10 @@
       top: 35%;
     }
   }
+
+  .main.main {
+     padding-top: 80px; 
+  }
 }
 
 @media (max-width: 766px) {
@@ -398,6 +402,10 @@
     &__inner-link {
       bottom: 6px;
       right: 6px;
+    }
+
+    &__item-img {
+      transform: scale(1);
     }
   }
 
