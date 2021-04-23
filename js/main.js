@@ -39,6 +39,7 @@ window.addEventListener("scroll", () => {
 // end hide header
 
 // start mobile header dropdown
+
 // if (window.matchMedia("(max-width: 1023px)").matches) {
 //   let dropdownCont = document.querySelector(".header__drop-cont");
 //   let dropdown = document.querySelector(".header__dropdown");
