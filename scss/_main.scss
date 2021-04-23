@@ -14,6 +14,23 @@
   padding-right: 15px;
 }
 
+.standart-pre-title {
+  font-size: 14px;
+  line-height: 23px;
+  color: #b7a179;
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 40px;
+  &::before {
+    position: absolute;
+    content: "";
+    bottom: -10px;
+    width: 37px;
+    height: 1px;
+    background: #b7a179;
+  }
+}
+
 .standart-title {
   font-family: Rubik;
   font-weight: 500;
@@ -23,9 +40,6 @@
   color: #373737;
 }
 
-// .standart-button-link {
-// }
-
 .inherit-block {
   font-family: inherit;
   font-style: inherit;
@@ -34,4 +48,21 @@
   line-height: inherit;
   letter-spacing: inherit;
   text-transform: inherit;
+}
+
+.cross-black-bg {
+  position: relative;
+  &:before {
+    background: #161616;
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 50%;
+  }
+}
+
+.we-offer-bg--black {
+  background: #161616;
 }
