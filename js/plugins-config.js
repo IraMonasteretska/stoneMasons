@@ -4,6 +4,8 @@ if (document.querySelector(".home-slider__slider")) {
     infinite: true,
     arrows: false,
     dots: true,
+    autoplay: true,
+    autoplaySpeed: 3500,
   });
 
   let dotsInner = document.querySelectorAll(".home-slider__dots-item");

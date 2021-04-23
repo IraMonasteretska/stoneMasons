@@ -8,9 +8,16 @@
     .header__menu-btn {
       height: 100px;
     }
+
+    .header__dropdown {
+      background: rgba(45, 45, 45, 0.8) !important;
+    }
   }
   &.main-black-bg-head {
-    background: rgba(45, 45, 45, 0.8);
+    background: transparent;
+    .header__dropdown {
+      background: transparent;
+    }
   }
   &.active-dark {
     background: #161616;
@@ -69,9 +76,10 @@
     padding-left: 30px;
     padding-right: 60px;
     align-items: center;
+
     .header__menu-text {
       position: relative;
-      color: #b7a179;
+
       &:before {
         position: absolute;
         content: "";
@@ -92,6 +100,7 @@
         transform: translateY(0px);
       }
       .header__menu-text {
+        color: #b7a179;
         &:before {
           transform: translateY(-50%) rotate(180deg);
         }
@@ -110,6 +119,11 @@
     right: 0;
     padding-top: 20px;
     z-index: -1;
+    &.active {
+      opacity: 1;
+      z-index: 1;
+      transform: translateY(0px);
+    }
   }
 
   &__menu-item-drop {
@@ -261,10 +275,20 @@
         }
       }
     }
+    li:hover {
+      p,
+      span {
+        color: #b7a179;
+        &:before {
+          background: #b7a179;
+        }
+      }
+    }
   }
 }
 
 .two-slider {
+  margin-top: -5px;
   background: #161616;
   padding-top: 40px;
   padding-bottom: 170px;
@@ -316,6 +340,12 @@
     height: 100%;
     transition: all 0.5s;
     object-fit: cover;
+    transition: all .5s;
+    overflow: hidden;
+    transform: scale(1.025);
+    &.hoverpic{
+      transform: scale(1);
+    }
   }
 
   &__counter {
@@ -399,6 +429,10 @@
     transition: all 0.5s;
     box-sizing: border-box;
     opacity: 0;
+    transition: all 0.5s;
+    &:hover{
+      background: #ddbf89;
+    }
   }
 
   &__inner-text {
@@ -417,10 +451,7 @@
     letter-spacing: 0.15em;
     color: #585858;
     transition: all 0.5s;
-    &:hover {
-      color: #f0eee9;
-      outline: none;
-    }
+  
   }
 
   .slick-arrow {
@@ -439,6 +470,9 @@
   margin-top: 190px;
   padding-bottom: 100px;
   position: relative;
+  &__title {
+    color: #252525;
+  }
   &__wrapper {
     display: flex;
     align-items: center;

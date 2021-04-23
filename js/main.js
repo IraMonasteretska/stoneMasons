@@ -30,3 +30,26 @@ window.addEventListener("scroll", () => {
   scrollPrev = scrolled;
 });
 // end hide header
+
+// start mobile header dropdown
+// if (window.matchMedia("(max-width: 1023px)").matches) {
+//   let dropdownCont = document.querySelector(".header__drop-cont");
+//   let dropdown = document.querySelector(".header__dropdown");
+//   dropdownCont.addEventListener('click', () => {
+//     dropdown.classList.toggle('active')
+//   })
+// }
+
+// end mobile header dropdown
+
+// start hover for slider
+$(".two-slider__inner").mouseenter(function () {
+  this.parentNode
+    .querySelector(".two-slider__item-img")
+    .classList.add("hoverpic");
+});
+
+$(".two-slider__inner").mouseleave(function () {
+  $(".two-slider__item-img").removeClass("hoverpic");
+});
+// end hover for slider
