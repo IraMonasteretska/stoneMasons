@@ -14,77 +14,47 @@ if (document.querySelector(".home-slider__slider")) {
     dotsHome[i].innerHTML = dotsInner[i].innerHTML;
   }
 }
-if (document.querySelector(".two-slider__slider")) {
-  $(".two-slider__slider").slick({
-    slidesToShow: 1,
-    infinite: false,
-    dots: false,
-    cssEase: "linear",
-    centerMode: true,
-    centerPadding: "20%",
-    responsive: [
-      {
-        breakpoint: 1100,
-        settings: {
-          centerPadding: "15%",
-        },
-      },
-      {
-        breakpoint: 860,
-        settings: {
-          centerPadding: "10%",
-        },
-      },
-      {
-        breakpoint: 766,
-        settings: {
-          infinite: true,
-          centerMode: false,
-        },
-      },
-    ],
+if (document.querySelector(".customslider")) {
+  var $status = $('.customslider .pagingInfo span.cp1');
+  var $status1 = $('.customslider .pagingInfo  span.cp2');
+  var $slickElement = $('.customslider .slider-centermode');
+
+  $slickElement.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+      if (slick.slideCount < 10) {
+          var i = (currentSlide ? currentSlide : 0) + 1;
+          $status.text('0' + i);
+      } else {
+          var i = (currentSlide ? currentSlide : 0) + 1;
+          $status.text(i);
+      }
+
+      if (slick.slideCount < 10) {
+          var i = (currentSlide ? currentSlide : 0) + 1;
+          $status1.text(' 0' + slick.slideCount);
+      } else {
+          var i = (currentSlide ? currentSlide : 0) + 1;
+          $status1.text(slick.slideCount);
+      }
+
   });
 
-  let myPrevBtn = document.querySelector(".two-slider__prev");
-  let sliderPrevBtn = document.querySelector(".two-slider__slider .slick-prev");
-  let myNextBtn = document.querySelector(".two-slider__next");
-  let sliderNextBtn = document.querySelector(".two-slider__slider .slick-next");
-
-  $(".two-slider__all-slide").text(
-    "0" + document.querySelectorAll(".two-slider__slider-item ").length
-  );
-  let currentSlide;
-  const updateSliderCounter = function (slick, currentIndex) {
-    currentSlide = slick.slickCurrentSlide() + 1;
-    $(".two-slider__current-slide").text("0" + currentSlide);
-  };
-
-  $(".two-slider__slider").on("init", function (event, slick) {
-    updateSliderCounter(slick);
+  $slickElement.slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      centerMode: true,
+      focusOnSelect: true,
+      arrows: true,
+      prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+      nextArrow: '<button type="button" class="slick-next">Next</button>',
+      speed: 1000,
+      centerPadding: '20%',
+      responsive: [{
+          breakpoint: 768,
+          settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              centerPadding: 0,
+          }
+      }]
   });
-
-  if (sliderPrevBtn.classList.contains("slick-disabled")) {
-    myPrevBtn.classList.add("my-disabled");
-  }
-
-  $(".two-slider__slider").on(
-    "afterChange",
-    function (event, slick, currentSlide) {
-      if (sliderPrevBtn.classList.contains("slick-disabled")) {
-        myPrevBtn.classList.add("my-disabled");
-      } else {
-        myPrevBtn.classList.remove("my-disabled");
-      }
-      if (sliderNextBtn.classList.contains("slick-disabled")) {
-        myNextBtn.classList.add("my-disabled");
-      } else {
-        myNextBtn.classList.remove("my-disabled");
-      }
-      updateSliderCounter(slick, currentSlide);
-    }
-  );
-
-  myPrevBtn.addEventListener("click", () => sliderPrevBtn.click());
-  myNextBtn.addEventListener("click", () => sliderNextBtn.click());
-  myNextBtn.click()
 }
