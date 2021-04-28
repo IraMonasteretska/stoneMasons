@@ -3,10 +3,20 @@ if (document.querySelector(".home-slider__slider")) {
     slidesToShow: 1,
     infinite: true,
     arrows: false,
-    dots: true,
-    autoplay: true,
-    autoplaySpeed: 2500,
+    dots: false,
+    asNavFor: '.home-slider__dots'
   });
+
+
+  $(".home-slider__dots").slick({
+    slidesToShow: 3,
+    infinite: true,
+    arrows: false,
+    dots: false,
+    asNavFor: '.home-slider__slider',
+    focusOnSelect: true
+  });
+
 
   let dotsInner = document.querySelectorAll(".home-slider__dots-item");
   let dotsHome = document.querySelectorAll(".home-slider .slick-dots button");
